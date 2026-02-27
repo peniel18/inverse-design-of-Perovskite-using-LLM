@@ -1,4 +1,14 @@
-./data/perovskites_by_formula.json
-./data/perovskites_by_space_group.json
-./data/perovskites_from_mp.json
+# JSON files
+data/*.json
+
+# Environment file
 .env
+
+# CIF directory
+data/cif_files/
+
+# Processed data directory
+data/processed_data/
+
+# Compressed pickle files
+*.pkl.gz

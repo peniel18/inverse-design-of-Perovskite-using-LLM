@@ -54,3 +54,21 @@ git commit -m "Comments on the commits"
 ```bash 
 git push origin feature/<your-feature-name>
 ```
+
+
+## Getting Data 
+Before executing the get data script, make sure to set the PYTHONPATH environment variable so that Python can properly resolve the project modules.
+```bash
+export PYTHONPATH=$(pwd)
+
+```
+
+
+Now, we can execute the script 
+```bash 
+python3 ./data/get_data_from_mp.py
+
+```
+
+
+### 
