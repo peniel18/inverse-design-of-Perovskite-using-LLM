@@ -1,0 +1,8 @@
+.env
+.remote-pilot/
+cmd.log
+projects/*.local.env
+logs/
+state/
+__pycache__/
+*.pyc
