@@ -1,6 +1,10 @@
 # inverse-design-of-Perovskite-using-LLM
 Leverage small language models for inverse design of Perovskite materials 
 
+# Install Python 
+Install Python 3.12.12
+
+
 
 # Local Python Environment 
 ## 1. Install uv (if not already installed)
@@ -64,11 +68,28 @@ export PYTHONPATH=$(pwd)
 ```
 
 
-Now, we can execute the script 
+First, store your Materials Project API key in a .env file to securely manage your credentials. Now, we can execute the script
 ```bash 
 python3 ./data/get_data_from_mp.py
 
 ```
 
 
-### 
+### Validate Perovskites Structures
+To validate the perovskties structures, 
+
+```bash
+
+python3 ./data/validate_perobskites.py
+
+```
+
+
+### Data Preprocessing 
+
+
+
+
+###  Train Test Split 
+
+

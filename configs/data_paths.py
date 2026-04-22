@@ -13,3 +13,7 @@ class DataPaths:
     test_data_file: Path = processed_data_dir / "test_data.pkl.gz"  
     val_data_file: Path = processed_data_dir / "val_data.pkl.gz"
     logs_dir: Path = Path("logs")
+    tokens_folder = Path("data/tokens")
+    train_tokens_file = tokens_folder / "train_tokens.pkl.gz"
+    val_tokens_file = tokens_folder / "val_tokens.pkl.gz"
+    test_tokens_file = tokens_folder / "test_tokens.pkl.gz"

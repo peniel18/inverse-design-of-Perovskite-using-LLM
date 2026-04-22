@@ -27,7 +27,7 @@ def preprocess_cif(cif_path: str, decimal_places: int = 4):
         # Round fractional coordinates
         rounded_coords = np.round(structure.frac_coords, decimal_places)
 
-        # Create NEW structure (correct way)
+        # Create NEW structure with rounded values
         structure = Structure(
             lattice=rounded_lattice,
             species=structure.species,

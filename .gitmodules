@@ -1,0 +1,3 @@
+[submodule "rclone_remote_pilot"]
+	path = rclone_remote_pilot
+	url = https://github.com/username/rclone-remote-pilot.git

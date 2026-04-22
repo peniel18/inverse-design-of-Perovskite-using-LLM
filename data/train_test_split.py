@@ -1,5 +1,4 @@
 import gzip 
-import random
 from sklearn.model_selection import train_test_split    
 import pickle
 from configs.data_paths import DataPaths
