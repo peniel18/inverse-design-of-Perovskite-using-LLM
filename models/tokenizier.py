@@ -7,7 +7,6 @@ ATOMS = [
     "Tc", "Hg", "Pu", "Al", "Tm", "Tb", "Ho", "Nb", "Ge", "Zr", "Cd", "V", "Sr", "Ni", "Rh", "Th", "Na", "Ru",
     "La", "Re", "Y", "Er", "Ce", "Pt", "Ga", "Li", "Cs", "F", "Ba", "Te", "Mo", "Gd", "Pr", "Bi", "Sc", "Ag", "Rb",
     "Dy", "Yb", "Nd", "Au", "Os", "Pa", "Sm", "Be", "Ac", "Xe", "Kr", "He", "Ne", "Ar",
-    # FIX: removed duplicate "Mo"
 ]
 
 KEYWORDS = [
@@ -121,9 +120,6 @@ class CIFTokenizer:
         token_pattern = "|".join(escaped)
         self._full_pattern = f"({token_pattern}|\\w+|[\\.,;!?])"
 
-    # ------------------------------------------------------------------ #
-    #  Vocabulary sources                                                  #
-    # ------------------------------------------------------------------ #
 
     @staticmethod
     def atoms():
@@ -146,10 +142,6 @@ class CIFTokenizer:
     @staticmethod
     def space_groups():
         return SPACE_GROUPS
-
-    # ------------------------------------------------------------------ #
-    #  Public properties                                                   #
-    # ------------------------------------------------------------------ #
 
     @property
     def vocab_size(self):
@@ -179,9 +171,6 @@ class CIFTokenizer:
     def unk_token_id(self):
         return self._token_to_id[UNK_TOKEN]
 
-    # ------------------------------------------------------------------ #
-    #  Core methods                                                        #
-    # ------------------------------------------------------------------ #
 
     def tokenize_cif(self, cif_string, single_spaces=True):
         """Convert a raw CIF string into a list of string tokens."""
