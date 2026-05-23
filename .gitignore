@@ -12,3 +12,8 @@ data/processed_data/
 
 # Compressed pickle files
 *.pkl.gzdata/graph_cache/
+./data/graph_cache/
+data/graph_cache/
+
+
+./data/tokens/*
