@@ -11,4 +11,4 @@ data/cif_files/
 data/processed_data/
 
 # Compressed pickle files
-*.pkl.gz
+*.pkl.gzdata/graph_cache/
