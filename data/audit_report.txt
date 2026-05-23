@@ -1,0 +1,46 @@
+============================================================
+  CIF AUDIT REPORT
+============================================================
+  Total CIF files scanned : 8069
+  Successfully parsed     : 8069
+  Parse failures          : 0
+  Disordered structures   : 0
+  Tiny  (< 2 atoms)       : 0
+  Large (> 200 atoms)     : 0
+  Duplicate groups        : 34
+
+── DUPLICATE GROUPS (same composition + volume) ────────
+  Group: mp-1078871.cif, mp-556983.cif
+  Group: mp-1080231.cif, mp-1395579.cif
+  Group: mp-1097917.cif, mp-1403003.cif
+  Group: mp-1113037.cif, mp-1205635.cif
+  Group: mp-1181886.cif, mp-4356.cif
+  Group: mp-1208637.cif, mp-1302407.cif
+  Group: mp-1228072.cif, mp-1228100.cif
+  Group: mp-1228269.cif, mp-1228450.cif
+  Group: mp-1228386.cif, mp-1228396.cif
+  Group: mp-13108.cif, mp-4551.cif
+  Group: mp-1349963.cif, mp-757379.cif
+  Group: mp-1352809.cif, mp-694938.cif
+  Group: mp-1372100.cif, mp-761337.cif
+  Group: mp-1385732.cif, mp-998174.cif
+  Group: mp-1399321.cif, mp-998344.cif
+  Group: mp-1400626.cif, mp-998152.cif
+  Group: mp-1410049.cif, mp-998607.cif
+  Group: mp-1521140.cif, mp-1521172.cif
+  Group: mp-1570791.cif, mp-1573704.cif
+  Group: mp-18977.cif, mp-19098.cif
+  Group: mp-2216739.cif, mp-2216868.cif
+  Group: mp-23091.cif, mp-23127.cif
+  Group: mp-2759521.cif, mp-558046.cif
+  Group: mp-40066.cif, mp-41963.cif
+  Group: mp-5020.cif, mp-5777.cif
+  Group: mp-504646.cif, mp-715212.cif
+  Group: mp-5246.cif, mp-7375.cif
+  Group: mp-547069.cif, mp-555351.cif
+  Group: mp-556365.cif, mp-560547.cif
+  Group: mp-690559.cif, mp-694960.cif
+  Group: mp-769468.cif, mp-770388.cif
+  Group: mp-998195.cif, mp-998204.cif
+  Group: mp-998212.cif, mp-998226.cif
+  Group: mp-998432.cif, mp-998525.cif
