@@ -292,3 +292,22 @@ if __name__ == "__main__":
     print("\nTraining ...")
     losses = train(model, train_loader, val_loader, CFG)
     print("Training complete. Best model saved to", CFG["model_path"])
+    print("\nRunning XAI analysis on a test sample ...")
+
+    # Grab a single sample from the test set
+    test_batch = next(iter(test_loader))
+    af, ei, d, bv, b, y = (test_batch["atom_fea"], test_batch["edge_index"],
+                           test_batch["dist"], test_batch["bond_vec"],
+                           test_batch["batch"], test_batch["y"])
+
+    # You need atom_labels (element symbols) for the first crystal in this batch
+    # This depends on how CIFGraphDataset stores them — check preprocessing_custom.py
+    atom_labels = dataset.get_atom_labels(0)  # <-- placeholder, adjust to actual method
+
+    xai_results = run_xai(
+        model       = model,
+        sample      = (af, ei, d, bv, b, y),
+        cfg         = CFG,
+        atom_labels = atom_labels,
+        prop_name   = "Formation Energy",
+    )

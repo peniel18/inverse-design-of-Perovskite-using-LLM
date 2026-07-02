@@ -57,9 +57,10 @@ class CTGNNExplainer(nn.Module):
     def __init__(self, model: nn.Module,
                  epochs:      int   = 200,
                  lr:          float = 0.01,
-                 lambda_node: float = 1e-3,
-                 lambda_edge: float = 1e-3,
-                 edge_size:   float = 5e-4):
+                 lambda_node: float = 5e-2,
+                 lambda_edge: float = 5e-2,
+                 edge_size:   float = 1e-2,
+                 node_size:   float = 1e-2):
         super().__init__()
         self.model       = model
         self.epochs      = epochs
@@ -67,6 +68,7 @@ class CTGNNExplainer(nn.Module):
         self.lambda_node = lambda_node
         self.lambda_edge = lambda_edge
         self.edge_size   = edge_size
+        self.node_size   = node_size
 
         # Freeze all model parameters
         for p in self.model.parameters():
@@ -169,8 +171,11 @@ class CTGNNExplainer(nn.Module):
             # Prediction loss (for the target crystal)
             pred_loss = F.mse_loss(y_masked[crystal_idx], y_target)
 
-            # Sparsity losses
-            reg_node = self.lambda_node * self._entropy(node_mask)
+            # Sparsity losses — entropy pushes masks toward 0/1,
+            # the *_size terms additionally penalise keeping too many
+            # atoms/edges "on", which is what actually forces discrimination
+            reg_node = (self.lambda_node * self._entropy(node_mask)
+                        + self.node_size * node_mask.mean())
             reg_edge = (self.lambda_edge * self._entropy(edge_mask)
                         + self.edge_size * edge_mask.mean())
 
