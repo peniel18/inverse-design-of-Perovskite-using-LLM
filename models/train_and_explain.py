@@ -284,7 +284,7 @@ if __name__ == "__main__":
     print("\nLoading dataset ...")
     train_loader, val_loader, test_loader, dataset = load_real_data(
         cif_dir    = "../data/data/cif_files/",
-        label_csv  = "../data/label_template.csv",
+        label_csv  = "inverse-design-of-Perovskite-using-LLM/data/label_template.csv",
         cache_dir  = "../data/data/graph_cache",
         batch_size = CFG["batch_size"],
     )
