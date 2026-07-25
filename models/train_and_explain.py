@@ -281,8 +281,7 @@ if __name__ == "__main__":
     )
     print(f"Model parameters: {sum(p.numel() for p in model.parameters()):,}")
     PROJECT_ROOT = os.environ.get(
-        "PROJECT_ROOT",
-        os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+        "PROJECT_ROOT"
     )
     label_data_dir = os.path.join(PROJECT_ROOT, "data", "data")
 
