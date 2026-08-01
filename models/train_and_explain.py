@@ -283,13 +283,13 @@ if __name__ == "__main__":
         ang_out      = CFG["ang_out"],
     )
     print(f"Model parameters: {sum(p.numel() for p in model.parameters()):,}")
-    PROJECT_ROOT = "./inverse-design-of-perovskite-using-LLM"
-    print(PROJECT_ROOT)
+    PROJECT_ROOT = "/inverse-design-of-perovskite-using-LLM"
+    cache_data_dir = "./inverse-design-of-perovskite-using-LLM"
     print("\nLoading dataset ...")
     train_loader, val_loader, test_loader, dataset = load_real_data(
         cif_dir    = os.path.join(PROJECT_ROOT, "data", "data", "cif_files"),
         label_csv  = os.path.join(PROJECT_ROOT, "data", "data", "label_template.csv"),
-        cache_dir  = os.path.join(PROJECT_ROOT, "data", "data", "graph_cache"),
+        cache_dir  = os.path.join(cache_data_dir, "data", "data", "graph_cache"),
         batch_size = CFG["batch_size"],
     )
 
