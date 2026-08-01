@@ -283,7 +283,7 @@ if __name__ == "__main__":
         ang_out      = CFG["ang_out"],
     )
     print(f"Model parameters: {sum(p.numel() for p in model.parameters()):,}")
-    PROJECT_ROOT = "/inverse-design-of-perovskite-using-LLM"
+    PROJECT_ROOT = "./inverse-design-of-perovskite-using-LLM"
     print(PROJECT_ROOT)
     print("\nLoading dataset ...")
     train_loader, val_loader, test_loader, dataset = load_real_data(
