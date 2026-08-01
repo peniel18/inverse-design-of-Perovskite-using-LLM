@@ -280,11 +280,8 @@ if __name__ == "__main__":
         ang_out      = CFG["ang_out"],
     )
     print(f"Model parameters: {sum(p.numel() for p in model.parameters()):,}")
-    PROJECT_ROOT = os.environ.get(
-        "PROJECT_ROOT"
-    )
-    label_data_dir = os.path.join(PROJECT_ROOT, "data", "data")
-
+    PROJECT_ROOT = "/home/achenie/KNUST_Student_Projects/peniel/inverse-design-of-perovskite-using-LLM"
+    print(PROJECT_ROOT)
     print("\nLoading dataset ...")
     train_loader, val_loader, test_loader, dataset = load_real_data(
         cif_dir    = os.path.join(PROJECT_ROOT, "data", "data", "cif_files"),
