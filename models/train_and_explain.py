@@ -37,6 +37,9 @@ from xai_visualization import (
 # CONFIGURATION
 # ─────────────────────────────────────────────────────────────────────────────
 
+
+config_file_dir = os.path.dirname(os.path.abspath(__file__))
+
 CFG = dict(
     # Model
     atom_fea_dim  = 92,       # CGCNN-style one-hot: 92 elements
@@ -61,8 +64,8 @@ CFG = dict(
     gnn_epochs    = 200,
 
     # Paths
-    output_dir    = "xai_output",
-    model_path    = "best_ctgnn.pt",
+    output_dir    = os.path.join(config_file_dir, "xai_output"),
+    model_path    = os.path.join(config_file_dir, "best_ctgnn.pt"),
 )
 
 os.makedirs(CFG["output_dir"], exist_ok=True)
