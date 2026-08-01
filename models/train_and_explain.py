@@ -38,7 +38,7 @@ from xai_visualization import (
 # ─────────────────────────────────────────────────────────────────────────────
 
 
-config_file_dir = os.path.dirname(os.path.abspath(__file__))
+PROJECT_ROOT = "/inverse-design-of-perovskite-using-LLM"
 
 CFG = dict(
     # Model
@@ -64,8 +64,8 @@ CFG = dict(
     gnn_epochs    = 200,
 
     # Paths
-    output_dir    = os.path.join(config_file_dir, "xai_output"),
-    model_path    = os.path.join(config_file_dir, "best_ctgnn.pt"),
+    output_dir    = os.path.join(PROJECT_ROOT, "xai_output"),
+    model_path    = os.path.join(PROJECT_ROOT, "best_ctgnn.pt"),
 )
 
 os.makedirs(CFG["output_dir"], exist_ok=True)
@@ -283,13 +283,13 @@ if __name__ == "__main__":
         ang_out      = CFG["ang_out"],
     )
     print(f"Model parameters: {sum(p.numel() for p in model.parameters()):,}")
-    PROJECT_ROOT = "inverse-design-of-Perovskite-using-LLM/.remote-pilot/perovskites_project/state/inverse-design-of-Perovskite-using-LLM"
+    PROJECT_ROOT = "/inverse-design-of-perovskite-using-LLM"
     cache_data  = "./inverse-design-of-perovskite-using-LLM"
     print("\nLoading dataset ...")
     train_loader, val_loader, test_loader, dataset = load_real_data(
         cif_dir    = os.path.join(PROJECT_ROOT, "data", "data", "cif_files"),
         label_csv  = os.path.join(PROJECT_ROOT, "data", "data", "label_template.csv"),
-        cache_dir  = os.path.join(PROJECT_ROOT, "data", "data", "graph_cache"),
+        cache_dir  = os.path.join(cache_data, "data", "data", "graph_cache"),
         batch_size = CFG["batch_size"],
     )
 
