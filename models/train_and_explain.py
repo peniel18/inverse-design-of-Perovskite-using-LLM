@@ -36,7 +36,6 @@ from xai_visualization import (
 # ─────────────────────────────────────────────────────────────────────────────
 # CONFIGURATION
 # ─────────────────────────────────────────────────────────────────────────────
-PROJECT_ROOT = "/inverse-design-of-perovskite-using-LLM"
 
 CFG = dict(
     # Model
@@ -62,8 +61,8 @@ CFG = dict(
     gnn_epochs    = 200,
 
     # Paths
-    output_dir    = os.path.join(PROJECT_ROOT, "xai_output"),
-    model_path    = os.path.join(PROJECT_ROOT, "best_ctgnn.pt"),
+    output_dir    = "xai_output",
+    model_path    = "best_ctgnn.pt",
 )
 
 os.makedirs(CFG["output_dir"], exist_ok=True)
